@@ -9,6 +9,7 @@
 ### CodeKit ###
 # General CodeKit files to ignore
 config.codekit
+codekit3.config
 /min
 
 
