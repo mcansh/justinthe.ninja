@@ -2,6 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import styled from 'styled-components';
+import Twitter from '../static/twitter.svg'
+import Instagram from '../static/instagram.svg'
 
 const Main = styled.main`
   display: flex;
@@ -39,15 +41,22 @@ const SocialLink = styled.a`
   font-size: 4rem;
   color: rgba(255, 255, 255, 0.7);
   transition: all 0.15s ease-out 0s;
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 10px;
 
+  svg {
+    height: 4rem;
+    width: 4rem;
+  }
+
   &.twitter:hover {
-    color: #55acee;
+    color: #1da1f2;
   }
 
   &.instagram:hover {
-    color: #3f729b;
+    color: #b900b4;
   }
 `;
 
@@ -62,13 +71,13 @@ const Index = () => (
       <p>Shoes // Red Bull // Cars</p>
       <div>
         <Link href="https://twitter.com/justinistech" passHref>
-          <SocialLink className="twitter">
-            <i className="fa fa-twitter" />
+          <SocialLink className="twitter" title="Twitter">
+            <Twitter />
           </SocialLink>
         </Link>
         <Link href="https://instagram.com/jtn78" passHref>
-          <SocialLink className="instagram">
-            <i className="fa fa-instagram" />
+          <SocialLink className="instagram" title="Instagram">
+            <Instagram />
           </SocialLink>
         </Link>
       </div>
