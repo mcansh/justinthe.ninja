@@ -1,0 +1,11 @@
+{
+  "name": "justinthe.ninja",
+  "alias": "justin.now.sh",
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build"
+    }
+  ]
+}
