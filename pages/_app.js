@@ -1,9 +1,9 @@
 import React from 'react';
 import App, { Container } from 'next/app';
-import { ThemeProvider, injectGlobal } from 'styled-components';
+import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import theme from '../config';
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   html {
     font-size: 10px;
     box-sizing: border-box;
@@ -39,7 +39,10 @@ class MyApp extends App {
     return (
       <Container>
         <ThemeProvider theme={theme}>
-          <Component {...pageProps} />
+          <>
+            <GlobalStyle />
+            <Component {...pageProps} />
+          </>
         </ThemeProvider>
       </Container>
     );

@@ -2,8 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import styled from 'styled-components';
-import Twitter from '../static/twitter.svg'
-import Instagram from '../static/instagram.svg'
+import Twitter from '../static/twitter.svg';
+import Instagram from '../static/instagram.svg';
 
 const Main = styled.main`
   display: flex;
@@ -12,7 +12,7 @@ const Main = styled.main`
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-image: url(https://justinthe.ninja/img/kanye.png);
+  background-image: url('/static/kanye.png');
   background-position: center;
   background-size: cover;
   line-height: 1;
@@ -35,54 +35,61 @@ const Main = styled.main`
   div {
     display: flex;
   }
-`;
 
-const SocialLink = styled.a`
-  font-size: 4rem;
-  color: rgba(255, 255, 255, 0.7);
-  transition: all 0.15s ease-out 0s;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 10px;
+  a {
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.15s ease-out 0s;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
 
-  svg {
-    height: 4rem;
-    width: 4rem;
+    svg {
+      height: 4rem;
+      width: 4rem;
+    }
+
+    &.twitter:hover {
+      color: #1da1f2;
+    }
+
+    &.instagram:hover {
+      color: #b900b4;
+    }
   }
 
-  &.twitter:hover {
-    color: #1da1f2;
-  }
-
-  &.instagram:hover {
-    color: #b900b4;
+  span:not(:last-of-type)::after {
+    content: '//';
+    margin: 0 0.35rem;
   }
 `;
 
 const Index = () => (
-  <>
+  <Main>
     <Head>
       <title>Justin</title>
     </Head>
-    <Main>
-      <h1>Justin</h1>
-      <h2>This is a god dream</h2>
-      <p>Shoes // Red Bull // Cars</p>
-      <div>
-        <Link href="https://twitter.com/justinistech" passHref>
-          <SocialLink className="twitter" title="Twitter">
-            <Twitter />
-          </SocialLink>
-        </Link>
-        <Link href="https://instagram.com/jtn78" passHref>
-          <SocialLink className="instagram" title="Instagram">
-            <Instagram />
-          </SocialLink>
-        </Link>
-      </div>
-    </Main>
-  </>
+    <h1>Justin</h1>
+    <h2>This is a god dream</h2>
+    <p>
+      <span>Shoes</span>
+      <span>Red Bull</span>
+      <span>Cars</span>
+    </p>
+    <div>
+      <Link href="https://twitter.com/justinistech" passHref>
+        <a className="twitter" title="Twitter">
+          <Twitter />
+        </a>
+      </Link>
+      <Link href="https://instagram.com/jtn78" passHref>
+        <a className="instagram" title="Instagram">
+          <Instagram />
+        </a>
+      </Link>
+    </div>
+  </Main>
 );
 
 export default Index;
