@@ -7,31 +7,32 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "babel-plugin-inline-react-svg": "^0.5.4",
-    "babel-plugin-styled-components": "latest",
-    "next": "canary",
+    "babel-plugin-inline-react-svg": "^1.0.1",
+    "babel-plugin-styled-components": "1.8.0",
+    "next": "7.0.2",
     "prop-types": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "styled-components": "latest",
-    "webpack": "latest"
+    "react": "16.6.1",
+    "react-dom": "16.6.1",
+    "styled-components": "4.0.3",
+    "webpack": "4.25.1"
   },
   "devDependencies": {
-    "babel-eslint": "latest",
-    "eslint": "latest",
-    "eslint-config-airbnb": "latest",
+    "babel-eslint": "10.0.1",
+    "eslint": "5.9.0",
+    "eslint-config-airbnb": "17.1.0",
     "eslint-config-mcansh": "latest",
-    "eslint-config-prettier": "latest",
-    "eslint-plugin-import": "latest",
-    "eslint-plugin-jsx-a11y": "latest",
-    "eslint-plugin-prettier": "latest",
-    "eslint-plugin-react": "latest",
-    "prettier": "latest"
+    "eslint-config-prettier": "3.1.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-prettier": "3.0.0",
+    "eslint-plugin-react": "7.11.1",
+    "prettier": "1.15.1"
   },
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "postbuild": "next export",
-    "start": "next start"
+    "postbuild": "next export -o dist",
+    "start": "next start",
+    "now-build": "yarn build"
   }
 }
