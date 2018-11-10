@@ -12,9 +12,6 @@ const Main = styled.main`
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-image: url('/static/kanye.png');
-  background-position: center;
-  background-size: cover;
   line-height: 1;
 
   h1 {
@@ -63,6 +60,16 @@ const Main = styled.main`
     content: '//';
     margin: 0 0.35rem;
   }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
 `;
 
 const Index = () => (
@@ -70,6 +77,11 @@ const Index = () => (
     <Head>
       <title>Justin</title>
     </Head>
+    <picture>
+      <source srcSet="/static/kanye.webp" type="image/webp" />
+      <source srcSet="/static/kanye.png" type="image/png" />
+      <img src="/static/kanye.png" alt="Kanye West" />
+    </picture>
     <h1>Justin</h1>
     <h2>This is a god dream</h2>
     <p>
